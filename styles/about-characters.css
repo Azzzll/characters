@@ -1,0 +1,26 @@
+.about-characters {
+  border-radius: 32px;
+  padding: 50px 25px;
+  max-width: 453px;
+  background: var(--about-bg);
+
+  .title {
+    font-family: var(--ff-title);
+    font-size: 44px;
+    color: var(--white);
+  }
+
+  .description {
+    font-family: var(--ff-text);
+    font-size: 28px;
+    color: var(--white);
+  }
+}
+
+@media screen and (width <= 465px) {
+  .about-characters {
+    border-radius: 30px;
+    padding: 12px 14px 8px 14px;
+    max-width: 235px;
+  }
+}

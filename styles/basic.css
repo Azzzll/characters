@@ -1,0 +1,43 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --about-bg: linear-gradient(180deg, #20656b 0%, rgba(87, 145, 161, 0) 100%);
+  --ff-title: Argentum Sans Bold;
+  --ff-text: Montserrat Medium;
+}
+
+@font-face {
+  font-family: Argentum Sans Bold;
+  src: url("../fonts/ArgentumSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: Montserrat Medium;
+  src: url("../fonts/Montserrat-Medium.ttf");
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100dvh;
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: end;
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+}
+
+@media screen and (width <= 465px) {
+  .container {
+    max-width: 288px;
+  }
+}
