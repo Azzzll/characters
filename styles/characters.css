@@ -1,0 +1,9 @@
+/* TODO: Adapt .characters */
+
+.characters {
+  .floor {
+    border-radius: 100%;
+    fill: linear-gradient(1deg, rgba(87, 145, 161, 0) 0%, #e7fbe7 100%);
+    filter: blur(10px);
+  }
+}
