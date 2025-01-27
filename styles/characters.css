@@ -1,6 +1,41 @@
 /* TODO: Adapt .characters */
 
 .characters {
+  position: relative;
+  max-width: 100%;
+
+  .character {
+    /* position: absolute; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    height: 655px;
+    width: 283px;
+    user-select: none;
+    transform: translateY(18%);
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+
+    & * {
+      position: absolute;
+      z-index: 1;
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .shirt {
+      z-index: 2;
+    }
+
+    .body {
+      z-index: 0;
+    }
+  }
+
   .floor {
     border-radius: 100%;
     fill: linear-gradient(1deg, rgba(87, 145, 161, 0) 0%, #e7fbe7 100%);
