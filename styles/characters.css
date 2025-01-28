@@ -11,20 +11,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    pointer-events: none;
     height: 655px;
     width: 283px;
     user-select: none;
     transform: translateY(18%);
     z-index: 1;
+    cursor: pointer;
     transition: 0.5s ease-in-out;
 
-    & * {
+    &:hover {
+      scale: 1.06;
+      transform: translateY(14%);
+      /* filter: drop-shadow(inset 4px 4px 5px 0 #bde3c7); */
+      /* filter: drop-shadow(14px 14px 1px #bde3c7); */
+      filter: drop-shadow(0px 0px 10px #58b26f);
+    }
+
+    & > * {
       position: absolute;
       z-index: 1;
       width: auto;
       height: 100%;
-      object-fit: cover;
     }
 
     .shirt {
@@ -40,5 +47,7 @@
     border-radius: 100%;
     fill: linear-gradient(1deg, rgba(87, 145, 161, 0) 0%, #e7fbe7 100%);
     filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
   }
 }
