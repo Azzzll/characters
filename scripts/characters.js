@@ -2,12 +2,6 @@
 const characters = document.querySelector(".characters");
 const manCharacter = characters.querySelector(".character.man");
 
-manCharacter.addEventListener("click", () => {
-  if (window.location.pathname === "/") {
-    window.location.href = "/male-character/";
-  }
-});
-
 const savedCharacter = localStorage.getItem("lastSavedManCharacter");
 // console.log(savedCharacter);
 
