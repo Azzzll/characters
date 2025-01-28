@@ -17,9 +17,9 @@ function clearImages() {
 
 // иконки в сайдбаре по умолчанию
 const imagesEyes1 = [
-    '../images/sidebar-outfit/eyes/11глаза.png',
+    'images/sidebar-outfit/eyes/11глаза.png',
     'images/sidebar-outfit/eyes/12глаза.png',
-    '../images/sidebar-outfit/eyes/13глаза.png',
+    'images/sidebar-outfit/eyes/13глаза.png',
     'images/sidebar-outfit/eyes/14глаза.png',
     'images/sidebar-outfit/eyes/21глаза.png',
     'images/sidebar-outfit/eyes/22глаза.png',
