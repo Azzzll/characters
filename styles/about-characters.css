@@ -2,6 +2,7 @@
   border-radius: 32px;
   padding: 50px 25px;
   max-width: 453px;
+  transform: translateY(20%);
   background: var(--about-bg);
 
   .title {

@@ -37,7 +37,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  place-items: end;
+  place-items: center;
   width: 100%;
   max-width: 1140px;
   margin-inline: auto;
