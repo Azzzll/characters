@@ -9,6 +9,7 @@ manCharacter.addEventListener("click", () => {
 });
 
 const savedCharacter = localStorage.getItem("lastSavedManCharacter");
+console.log(savedCharacter);
 
 if (savedCharacter) {
   manCharacter.innerHTML = savedCharacter;
