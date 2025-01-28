@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/normalise.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,37 +25,53 @@
             <div class="grid-container">
                 <div class="circle">
                     <div class="blur-background"></div>
-                    <img src="/images/character-parts/тело.png" class="girl-img"></img>
+                    <img src="/images/outfit/тело.png" class="girl-img"></img>
                 </div>
                 <div class="clothes-changing">
                     <div class="left-select">
-                        <button class="face">
-                            <img src="/images/icons/face.svg" alt="">
-                        </button>
-                        <button class="eyes">
+                        <button class="eyes" id="eyes">
                             <img src="/images/icons/eyes.svg" alt="">
                         </button>
-                        <button class="eyebrows">
+                        <button class="eyebrows" id="eyebrows">
                             <img src="/images/icons/eyebrows.svg" alt="">
                         </button>
-                        <button class="hairs">
+                        <button class="hairs" id="hairs">
                             <img src="/images/icons/hairs.svg" alt="">
                         </button>
-                        <button class="top">
+                        <button class="top" id="top">
                             <img src="/images/icons/top.svg" alt="">
                         </button>
-                        <button class="pants">
+                        <button class="pants" id="pants">
                             <img src="images/icons/pants.svg" alt="">
                         </button>
+                        <button class="boots" id="boots">
+                            <img src="/images/icons/boots.svg" alt="">
+                        </img>
                     </div>
                     <div class="right-select">
                         <div class="grid-container-clothes">
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
+                            <div class="grid-item">
+                                <img class="grid-item-png"></img>
+                            </div>
+                            <div class="grid-item">
+                                <div class="grid-item-png"></div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="grid-item-png"></div>
+
+                            </div>
+                            <div class="grid-item">
+                                <div class="grid-item-png"></div>
+
+                            </div>
+                            <div class="grid-item">
+                                <div class="grid-item-png"></div>
+
+                            </div>
+                            <div class="grid-item">
+                                <div class="grid-item-png"></div>
+
+                            </div>
                         </div>
                         <div class="bottom-switch">
                             <div class="prev-pg"></div>
@@ -103,5 +119,6 @@
             </div>
         </div>
     </footer>
+    <script type="module" src="scripts/main.js"></script>
 </body>
 </html>
