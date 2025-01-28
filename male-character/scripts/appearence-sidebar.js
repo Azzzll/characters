@@ -155,5 +155,26 @@ if (sidebarPickAppearence) {
       text.style.display = "none";
       cell.appendChild(savedCharacter);
     }
+
+    const images = character.querySelectorAll("img");
+    images.forEach((img) => {
+      // Проверяем, является ли src полным URL
+      if (img.src.startsWith("http")) {
+        console.log("Полный URL:", img.src);
+      } else {
+        // Если src не является полным URL, добавляем префикс
+        img.src = "./male-character/" + img.src;
+      }
+    });
+
+    // Создаем новый массив строк с обновленными изображениями
+    const updatedImages = Array.from(images).map((img) => {
+      return `<img class="${img.className}" src="${img.src}" alt="${img.alt}">`;
+    });
+
+    // Сохраняем обновленный HTML в localStorage
+    const manCharacter = updatedImages.join(""); // Объединяем массив строк в одну строку
+    console.log(manCharacter);
+    localStorage.setItem("lastSavedManCharacter", manCharacter);
   });
 }
