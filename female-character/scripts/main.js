@@ -14,6 +14,7 @@ function clearImages() {
     });
 }
 
+
 // иконки в сайдбаре по умолчанию
 const imagesEyes1 = [
     '../images/sidebar-outfit/eyes/11глаза.png',
