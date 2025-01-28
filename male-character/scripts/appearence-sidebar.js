@@ -174,7 +174,7 @@ if (sidebarPickAppearence) {
 
     // Сохраняем обновленный HTML в localStorage
     const manCharacter = updatedImages.join(""); // Объединяем массив строк в одну строку
-    console.log(manCharacter);
+    // console.log(manCharacter);
     localStorage.setItem("lastSavedManCharacter", manCharacter);
   });
 }
