@@ -1,6 +1,7 @@
 .container {
   position: relative;
   width: 100%;
+  margin-top: 60px;
 
   .character {
     position: relative;
@@ -36,7 +37,7 @@
 
   .sidebar {
     position: absolute;
-    top: 6%;
+    top: 0%;
     right: -4%;
     transform: translateY(6%);
     border-radius: 115px;
