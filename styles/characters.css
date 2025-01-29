@@ -33,6 +33,30 @@
       }
     }
 
+    &.cat {
+      &:hover {
+        scale: 1.06;
+        transform: translateY(14%);
+        filter: drop-shadow(0px 0px 10px #8f331f);
+        transition: 0.5s ease-in-out;
+      }
+      &:active {
+        filter: brightness(70%) drop-shadow(0px 0px 10px #8f331f);
+      }
+    }
+
+    &.woman {
+      &:hover {
+        scale: 1.06;
+        transform: translateY(14%);
+        filter: drop-shadow(0px 0px 10px #dcb370);
+        transition: 0.5s ease-in-out;
+      }
+      &:active {
+        filter: brightness(70%) drop-shadow(0px 0px 10px #dcb370);
+      }
+    }
+
     & > * {
       position: absolute;
       z-index: 1;
