@@ -3,6 +3,7 @@
 .characters {
   position: relative;
   max-width: 100%;
+  display: flex;
 
   .character {
     /* position: absolute; */
@@ -14,7 +15,6 @@
     height: 655px;
     width: 283px;
     user-select: none;
-    transform: translateY(18%);
     z-index: 1;
     cursor: pointer;
     transition: 0.5s ease-in-out;
@@ -22,11 +22,9 @@
     &.man {
       &:hover {
         scale: 1.06;
-        transform: translateY(14%);
         /* filter: drop-shadow(inset 4px 4px 5px 0 #bde3c7); */
         /* filter: drop-shadow(14px 14px 1px #bde3c7); */
         filter: drop-shadow(0px 0px 10px #58b26f);
-        transition: 0.5s ease-in-out;
       }
       &:active {
         filter: brightness(70%) drop-shadow(0px 0px 10px #58b26f);
@@ -36,9 +34,7 @@
     &.cat {
       &:hover {
         scale: 1.06;
-        transform: translateY(14%);
         filter: drop-shadow(0px 0px 10px #8f331f);
-        transition: 0.5s ease-in-out;
       }
       &:active {
         filter: brightness(70%) drop-shadow(0px 0px 10px #8f331f);
@@ -48,9 +44,7 @@
     &.woman {
       &:hover {
         scale: 1.06;
-        transform: translateY(14%);
         filter: drop-shadow(0px 0px 10px #dcb370);
-        transition: 0.5s ease-in-out;
       }
       &:active {
         filter: brightness(70%) drop-shadow(0px 0px 10px #dcb370);
@@ -76,6 +70,8 @@
   }
 
   .floor {
+    position: absolute;
+    bottom: 0;
     border-radius: 100%;
     fill: linear-gradient(1deg, rgba(87, 145, 161, 0) 0%, #e7fbe7 100%);
     filter: blur(10px);
