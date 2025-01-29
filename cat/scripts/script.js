@@ -102,7 +102,7 @@ updateTabs(currentTabIndex);
   const characters = [
       {
           elipse: "image/elipse.svg",
-          body: "image/body_1.svg",
+          body: "image/body_brown.svg",
           eyes: "image/eys_1.svg",
           ears: "image/ears_1.svg",
           scarf: "image/scarf_2.svg",
