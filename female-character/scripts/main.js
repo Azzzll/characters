@@ -49,6 +49,14 @@ const imagesHairs2 = [
 
 
 document.addEventListener("DOMContentLoaded", function() {
+
+    character.innerHTML = `
+    <img class="hairs" src="images/outfit/hairs/23волосы.png" alt="Волосы" />
+    <img class="eyebrows" src="images/outfit/eyebrows/3брови.png" alt="Брови" />
+    <img class="pants" src="images/outfit/eyes/11глаза.png" alt="Штаны персонажа" />
+    <img class="body" src="images/character/body.png" alt="Тело персонажа" />
+  `;
+
     // Перебираем ячейки и устанавливаем изображения
     gridItems.forEach((item, index) => {
     if (imagesEyes1[index]) { // Проверяем, есть ли изображение для текущей ячейки
