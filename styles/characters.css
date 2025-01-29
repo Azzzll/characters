@@ -19,12 +19,42 @@
     cursor: pointer;
     transition: 0.5s ease-in-out;
 
-    &:hover {
-      scale: 1.06;
-      transform: translateY(14%);
-      /* filter: drop-shadow(inset 4px 4px 5px 0 #bde3c7); */
-      /* filter: drop-shadow(14px 14px 1px #bde3c7); */
-      filter: drop-shadow(0px 0px 10px #58b26f);
+    &.man {
+      &:hover {
+        scale: 1.06;
+        transform: translateY(14%);
+        /* filter: drop-shadow(inset 4px 4px 5px 0 #bde3c7); */
+        /* filter: drop-shadow(14px 14px 1px #bde3c7); */
+        filter: drop-shadow(0px 0px 10px #58b26f);
+        transition: 0.5s ease-in-out;
+      }
+      &:active {
+        filter: brightness(70%) drop-shadow(0px 0px 10px #58b26f);
+      }
+    }
+
+    &.cat {
+      &:hover {
+        scale: 1.06;
+        transform: translateY(14%);
+        filter: drop-shadow(0px 0px 10px #8f331f);
+        transition: 0.5s ease-in-out;
+      }
+      &:active {
+        filter: brightness(70%) drop-shadow(0px 0px 10px #8f331f);
+      }
+    }
+
+    &.woman {
+      &:hover {
+        scale: 1.06;
+        transform: translateY(14%);
+        filter: drop-shadow(0px 0px 10px #dcb370);
+        transition: 0.5s ease-in-out;
+      }
+      &:active {
+        filter: brightness(70%) drop-shadow(0px 0px 10px #dcb370);
+      }
     }
 
     & > * {
@@ -32,6 +62,8 @@
       z-index: 1;
       width: auto;
       height: 100%;
+      pointer-events: none;
+      user-select: none;
     }
 
     .shirt {

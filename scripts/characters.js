@@ -1,9 +1,7 @@
-// .characters .character.men
 const characters = document.querySelector(".characters");
 const manCharacter = characters.querySelector(".character.man");
 
 const savedCharacter = localStorage.getItem("lastSavedManCharacter");
-// console.log(savedCharacter);
 
 if (savedCharacter) {
   manCharacter.innerHTML = savedCharacter;
