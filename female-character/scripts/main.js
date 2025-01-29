@@ -51,10 +51,14 @@ const imagesHairs2 = [
 document.addEventListener("DOMContentLoaded", function() {
 
     character.innerHTML = `
+    <img class="body" src="images/character/body.png" alt="Тело" />
+    <img class="eyes" src="images/outfit/eyes/11глаза.png" alt="Глаза" />
     <img class="hairs" src="images/outfit/hairs/23волосы.png" alt="Волосы" />
+    <img class="top" src="images/outfit/top/21майка.png" alt="Верх" />
+    <img class="pants" src="images/outfit/pants/31штаны.png" alt="Штаны " />
     <img class="eyebrows" src="images/outfit/eyebrows/3брови.png" alt="Брови" />
-    <img class="pants" src="images/outfit/eyes/11глаза.png" alt="Штаны персонажа" />
-    <img class="body" src="images/character/body.png" alt="Тело персонажа" />
+    <img class="boots" src="images/outfit/boots/2кроссовки.png" alt="Кроссовки" />
+
   `;
 
     // Перебираем ячейки и устанавливаем изображения
