@@ -178,7 +178,7 @@ a {
     cursor: pointer;  
 }
 
-.grid-container-clothes{
+.gridcontainerclothes{
     position: relative;
     display: grid; /* Используем Grid Layout */
     grid-template-columns: repeat(2, 1fr); /* 2 столбца */
@@ -198,11 +198,6 @@ a {
     background-color: rgba(205, 136, 57, 0.32);
     align-items: center;
     justify-items: center;
-
-}
-.grid-item-png{
-    height: 100%; /* Высота изображения 100% от родительского элемента */
-    width: 100%;
     background-size: cover;
 }
 .bottom-switch{

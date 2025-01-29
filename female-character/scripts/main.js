@@ -1,18 +1,17 @@
 // Получаем все элементы с классом 'grid-item'
-const gridItems = document.querySelectorAll('.grid-item-png');
+const gridItems = document.querySelectorAll('.grid-item');
 
-// Выбранная иконка в сайдбаре
-let selectedIcon = 0;
 
-// Функция для очистки изображений в ячейках
-function clearImages() {
-    gridItems.forEach(item => {
-        const img = item.querySelector('img'); // Находим изображение в ячейке
-        if (img) {
-            item.removeChild(img); // Удаляем изображение
-        }
-    });
-}
+
+
+
+
+
+
+
+
+
+
 
 
 // иконки в сайдбаре по умолчанию
@@ -46,58 +45,53 @@ const imagesHairs2 = [
     'images/outfit/hairs/42волосы.png',
     'images/outfit/hairs/43волосы.png',
 ];
-
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    character.innerHTML = `
-    <img class="body" src="images/character/body.png" alt="Тело" />
-    <img class="eyes" src="images/outfit/eyes/11глаза.png" alt="Глаза" />
-    <img class="hairs" src="images/outfit/hairs/23волосы.png" alt="Волосы" />
-    <img class="top" src="images/outfit/top/21майка.png" alt="Верх" />
-    <img class="pants" src="images/outfit/pants/31штаны.png" alt="Штаны " />
-    <img class="eyebrows" src="images/outfit/eyebrows/3брови.png" alt="Брови" />
-    <img class="boots" src="images/outfit/boots/2кроссовки.png" alt="Кроссовки" />
-
-  `;
-
-    // Перебираем ячейки и устанавливаем изображения
-    gridItems.forEach((item, index) => {
-    if (imagesEyes1[index]) { // Проверяем, есть ли изображение для текущей ячейки
-        item.style.backgroundImage = `url(${imagesEyes1[index]})`;
-    }
+const sidebarPickAppearence = document.querySelector(".character",);
+const appearences = sidebarPickAppearence.querySelectorAll(".icon_container");
+appearences.forEach((gridcontainerclothes) => {
+  // При клике на иконку: (парик/одежда/тд)
+  gridcontainerclothes.addEventListener("click", () => {
+    // Удалить у всех .icon_container класс .active
+    appearences.forEach((gridcontainerclothes) =>
+        gridcontainerclothes.classList.remove("active"),
+    );
+    // Удалить у всех ячеек существовавшие изображения
+    cells.forEach((cell) => {
+      cell.innerHTML = "";
     });
+
+    // Присвоить текущему .icon_container класс active
+    gridcontainerclothes.classList.add("active");
+    // Узнать что это за внешность (face/wig/pants/etc)
+    const activeAppearence = gridcontainerclothes.classList[1];
+    uploadCells(activeAppearence);
+  });
 });
 
+// Подгрузка внешности в ячейки от активной иконки
+const uploadCells = (activeAppearence) => {
+    for (let i = 1; i <= cells.length; i++) {
+      const image = document.createElement("img");
+      image.className = "icon";
+      image.src = `images/outfit/${activeAppearence}/${i}.png`;
 
-// Функция для обновления значения переменной и отображения его на странице
-function updateValue(newValue) {
-    myInteger = newValue;
-    document.getElementById('value').textContent = myInteger;
-}
-// Обработчики событий для кнопок в сайдбаре
-document.getElementById('eyes').addEventListener('click', function() {
-    updateValue(1); 
-});
-document.getElementById('eyebrows').addEventListener('click', function() {
-    clearImages();
-    gridItems.forEach((item, index) => {
-        if (imagesEyebrows1[index]) { // Проверяем, есть ли изображение для текущей ячейки
-            item.style.backgroundImage = `url(${imagesEyebrows1[index]})`;
-        }
-        });
-});
-document.getElementById('hairs').addEventListener('click', function() {
-    updateValue(3); 
-});
-document.getElementById('top').addEventListener('click', function() {
-    updateValue(4); 
-}); 
-document.getElementById('pants').addEventListener('click', function() {
-    updateValue(5); 
-});
-document.getElementById('boots').addEventListener('click', function() {
-    updateValue(6);
-});
+      // Костыль без бекенда
+      // Изображения грузятся 1-12.png, даже если их нет
+      // TODO: изменить
+      image.onerror = () => {
+        image.remove();
+        // console.clear();
+      };
+
+      cells[i - 1].appendChild(image);
+    }
+  };
+
+
+
+
+
+
+
+
 
 
