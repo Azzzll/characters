@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Gabriela';
-    src: url(/fonts/Gabriela-Regular.ttf);
+    src: url(../fonts/Gabriela-Regular.ttf);
 }
 @font-face {
     font-family: 'Inter';
-    src: url(/fonts/Inter-Variable.ttf);
+    src: url(../fonts/Inter-Variable.ttf);
 }
 body {
     height: 100%; 
@@ -123,16 +123,17 @@ a {
     align-items: center;
     justify-content: center;
     height: 34px;
-    width: 40px;
-    z-index: 10;
+    width: 40px;  
+    cursor: pointer;  
 }
+
 .eyes{
     background-color: rgba(230, 195, 131);
     align-items: center;
     justify-content: center;
     height: 34px;
     width: 40px;
-    z-index: 10;
+    cursor: pointer;  
 }
 .eyebrows{
     background-color: rgba(230, 195, 131);
@@ -140,7 +141,7 @@ a {
     justify-content: center;
     height: 34px;
     width: 40px;
-    z-index: 10;
+    cursor: pointer;  
 }
 .hairs{
     background-color: rgba(230, 195, 131);
@@ -148,7 +149,7 @@ a {
     justify-content: center;
     height: 34px;
     width: 40px;
-    z-index: 10;
+    cursor: pointer;  
 }
 .top{
     background-color: rgba(230, 195, 131);
@@ -156,7 +157,7 @@ a {
     justify-content: center;
     height: 34px;
     width: 40px;
-    z-index: 10;
+    cursor: pointer;  
 }
 .pants{
     background-color: rgba(230, 195, 131);
@@ -164,7 +165,15 @@ a {
     justify-content: center;
     height: 34px;
     width: 40px;
-    z-index: 10;
+    cursor: pointer;  
+}
+.boots{
+    background-color: rgba(230, 195, 131);
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 40px;
+    cursor: pointer;  
 }
 
 .grid-container-clothes{
@@ -177,12 +186,22 @@ a {
     margin-top: 59px;
     height: 474px;
     width: 311px;
+    
 }
 .grid-item{
-    width: 138px;
+    position: relative;
     height: 142px;
+    width: 139px;
     border-radius: 33px;
-    background: rgba(205, 136, 57, 0.32);
+    background-color: rgba(205, 136, 57, 0.32);
+    align-items: center;
+    justify-items: center;
+
+}
+.grid-item-png{
+    height: 100%; /* Высота изображения 100% от родительского элемента */
+    width: 100%;
+    background-size: cover;
 }
 .bottom-switch{
     display: flex; /* Используем Flexbox */
@@ -192,7 +211,7 @@ a {
     margin-top: 20px;
 }
 .prev-pg{
-    background-image: url(/images/double-prev.svg);
+    background-image: url(../images/double-prev.svg);
     background-repeat: no-repeat;
     width: 24px;
     height: 24px;
@@ -216,7 +235,7 @@ a {
 
 }
 .next-pg{
-    background-image: url(/images/double-next.svg);
+    background-image: url(../images/double-next.svg);
     background-repeat: no-repeat;
     width: 15px;
     height: 24px;
