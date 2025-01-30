@@ -453,7 +453,13 @@
         }
 
         .btns {
-          max-width: initial;
+          position: absolute;
+          top: 1%;
+          z-index: 3;
+          top: -72%;
+          left: -4%;
+          width: 104%;
+          max-width: -webkit-fill-available;
         }
       }
     }
