@@ -18,6 +18,27 @@
   }
 }
 
+@media screen and (width <= 1290px) {
+  .about-characters {
+    width: 235px;
+    min-height: 185px;
+    padding: 12px 14px 8px 14px;
+    order: 1;
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 23px;
+    }
+
+    .description {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 18.29px;
+    }
+  }
+}
+
 @media screen and (width <= 465px) {
   .about-characters {
     border-radius: 30px;
