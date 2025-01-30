@@ -73,6 +73,7 @@
   .character.cat {
     z-index: 2;
     height: calc(655px / 2);
+    left: 14%;
 
     #eys {
       width: 46px;
