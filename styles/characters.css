@@ -113,3 +113,18 @@
     user-select: none;
   }
 }
+
+@media screen and (width <= 1290px) {
+  .characters {
+    .character {
+      width: 125px;
+      height: 287px;
+    }
+
+    .floor {
+      width: -webkit-fill-available;
+      border: 1px solid whitesmoke;
+      background: lightgoldenrodyellow;
+    }
+  }
+}
