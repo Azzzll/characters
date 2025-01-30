@@ -448,7 +448,8 @@
       &.pick-appearence {
         .content {
           .appearence {
-            grid-template-columns: repeat(4, 1fr);
+            /* grid-template-columns: repeat(4, 1fr); */
+            gap: 9px;
           }
         }
 
@@ -456,7 +457,7 @@
           position: absolute;
           top: 1%;
           z-index: 3;
-          top: -72%;
+          top: -25%;
           left: -4%;
           width: 104%;
           max-width: -webkit-fill-available;
