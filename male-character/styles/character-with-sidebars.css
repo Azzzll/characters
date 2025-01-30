@@ -479,7 +479,7 @@
     .character {
       &.appearence {
         height: 52dvh;
-        transform: translateY(0%);
+        transform: translateY(7%);
       }
     }
   }
