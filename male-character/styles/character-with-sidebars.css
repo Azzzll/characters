@@ -446,8 +446,8 @@
   .container {
     .sidebar {
       &.pick-appearence {
-        position: relative;
-        bottom: -52px;
+        position: absolute;
+        bottom: 0%;
 
         .content {
           .appearence {
@@ -477,10 +477,8 @@
     }
 
     .character {
-      &.appearence {
-        height: 52dvh;
-        transform: translateY(7%);
-      }
+      height: 57dvh;
+      transform: translateY(7%);
     }
   }
 }
