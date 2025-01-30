@@ -69,6 +69,40 @@
     }
   }
 
+.character.cat {
+  width: 25px;
+  z-index: 2;
+  #eys {
+    width: 46px;
+    left: -43px;
+    top: 407px;
+    height: 22px;
+  }
+  #ears {
+    width: 82px;
+    height: 127px;
+    left: -58px;
+    top: 341px;
+  }
+  #scarf {
+    width: 91px;
+    height: 159px;
+    top: 415px;
+    left: -67px;
+  }
+  #tail {
+    width: 213px;
+    height: 463px;
+    left: -82px;
+    top: 265px;
+  }
+  #body {
+    width: 193px;
+    top: 168px;
+    left: -72px;
+   }
+}
+  
   .floor {
     position: absolute;
     bottom: 0;
