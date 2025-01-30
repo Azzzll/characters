@@ -99,6 +99,7 @@ cells.forEach((cell) => {
       switch (appearenceName) {
         case "eyes":
           document.getElementById('eyes_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
         case "hairs":
           document.getElementById('hairs_master').src = `images/outfit/${currentAppearenceUrl}`;
           break;
