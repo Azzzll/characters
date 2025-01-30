@@ -2,18 +2,6 @@
 const gridItems = document.querySelectorAll('.grid-item');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // иконки в сайдбаре по умолчанию
 const imagesEyes1 = [
     'images/sidebar-outfit/eyes/11глаза.png',
@@ -45,14 +33,18 @@ const imagesHairs2 = [
     'images/outfit/hairs/42волосы.png',
     'images/outfit/hairs/43волосы.png',
 ];
-const sidebarPickAppearence = document.querySelector(".right-select",);
+const sidebarPickAppearence = document.querySelector(".clothes-changing",);
+const cellsWrapper = sidebarPickAppearence.querySelector(".gridcontainerclothes");
 const appearences = sidebarPickAppearence.querySelectorAll(".icon_container");
-appearences.forEach((gridcontainerclothes) => {
+const cells = cellsWrapper.querySelectorAll(".grid-item");
+
+
+appearences.forEach((appearence) => {
   // При клике на иконку: (парик/одежда/тд)
-  gridcontainerclothes.addEventListener("click", () => {
+  appearence.addEventListener("click", () => {
     // Удалить у всех .icon_container класс .active
-    appearences.forEach((gridcontainerclothes) =>
-        gridcontainerclothes.classList.remove("active"),
+    appearences.forEach((appearence) =>
+      appearence.classList.remove("active"),
     );
     // Удалить у всех ячеек существовавшие изображения
     cells.forEach((cell) => {
@@ -60,18 +52,21 @@ appearences.forEach((gridcontainerclothes) => {
     });
 
     // Присвоить текущему .icon_container класс active
-    gridcontainerclothes.classList.add("active");
+    appearence.classList.add("active");
     // Узнать что это за внешность (face/wig/pants/etc)
-    const activeAppearence = gridcontainerclothes.classList[1];
+    const activeAppearence = appearence.classList[1];
     uploadCells(activeAppearence);
   });
 });
+
+
+
 
 // Подгрузка внешности в ячейки от активной иконки
 const uploadCells = (activeAppearence) => {
     for (let i = 1; i <= cells.length; i++) {
       const image = document.createElement("img");
-      image.className = "icon";
+      image.className = "grid-item-png";
       image.src = `images/sidebar-outfit/${activeAppearence}/${i}.png`;
 
       // Костыль без бекенда
