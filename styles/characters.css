@@ -4,6 +4,7 @@
   position: relative;
   max-width: 100%;
   display: flex;
+  align-items: flex-end;
 
   .character {
     /* position: absolute; */
@@ -13,13 +14,14 @@
     justify-content: center;
     align-items: center;
     height: 655px;
-    width: 283px;
+    width: 187px;
     user-select: none;
     z-index: 1;
     cursor: pointer;
     transition: 0.5s ease-in-out;
 
     &.man {
+      margin-left: -35px;
       &:hover {
         scale: 1.06;
         /* filter: drop-shadow(inset 4px 4px 5px 0 #bde3c7); */
@@ -69,40 +71,36 @@
     }
   }
 
-.character.cat {
-  width: 25px;
-  z-index: 2;
-  #eys {
-    width: 46px;
-    left: -43px;
-    top: 407px;
-    height: 22px;
+  .character.cat {
+    z-index: 2;
+    height: calc(655px / 2);
+    left: 14%;
+    margin-left: -40px;
+
+    #eys {
+      width: 46px;
+      top: -24%;
+      left: 14%;
+    }
+    #ears {
+      width: 82px;
+      left: 6%;
+      top: -28%;
+    }
+    #scarf {
+      width: 91px;
+      height: 159px;
+      left: 2%;
+    }
+    #tail {
+      width: 213px;
+      height: 463px;
+    }
+    #body {
+      width: 193px;
+    }
   }
-  #ears {
-    width: 82px;
-    height: 127px;
-    left: -58px;
-    top: 341px;
-  }
-  #scarf {
-    width: 91px;
-    height: 159px;
-    top: 415px;
-    left: -67px;
-  }
-  #tail {
-    width: 213px;
-    height: 463px;
-    left: -82px;
-    top: 265px;
-  }
-  #body {
-    width: 193px;
-    top: 168px;
-    left: -72px;
-   }
-}
-  
+
   .floor {
     position: absolute;
     bottom: 0;
@@ -119,6 +117,36 @@
     .character {
       width: 125px;
       height: 287px;
+    }
+
+    .character.cat {
+      width: calc(125px / 2);
+      height: calc(287px / 2);
+
+      #eys {
+        width: calc(46px / 2.4);
+        height: calc(22px / 2.4);
+        top: 22%;
+        left: 0%;
+      }
+      #ears {
+        width: calc(82px / 2);
+        height: calc(127px / 2);
+        top: -1%;
+        left: -13%;
+      }
+      #scarf {
+        width: calc(91px / 2);
+        height: calc(159px / 2);
+        left: -19%;
+      }
+      #tail {
+        width: calc(213px / 2);
+        height: calc(453px / 2);
+      }
+      #body {
+        width: 193px;
+      }
     }
 
     .floor {
