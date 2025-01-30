@@ -446,6 +446,9 @@
   .container {
     .sidebar {
       &.pick-appearence {
+        position: relative;
+        bottom: -52px;
+
         .content {
           .appearence {
             /* grid-template-columns: repeat(4, 1fr); */
@@ -453,14 +456,22 @@
           }
         }
 
-        .btns {
+        .save,
+        .back {
           position: absolute;
-          top: 1%;
+          top: -21%;
+          bottom: auto;
           z-index: 3;
-          top: -25%;
-          left: -4%;
-          width: 104%;
-          max-width: -webkit-fill-available;
+          scale: 0.5;
+          transform: none;
+        }
+
+        .save {
+          left: -13%;
+        }
+
+        .back {
+          right: -8%;
         }
       }
     }
