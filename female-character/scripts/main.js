@@ -74,8 +74,22 @@ cells.forEach((cell) => {
     const characterImage = character.querySelector(`.${appearenceName}`);
     if (characterImage) {
       // Применить найденную одежду на персонажа
-      
-      
+      switch (appearenceName) {
+        case "face":
+          face.src = outfitUrl;
+          break;
+        case "wig":
+          wig.src = outfitUrl;
+          break;
+        case "shirt":
+          shirt.src = outfitUrl;
+          break;
+        case "pants":
+          pants.src = outfitUrl;
+          break;
+        // default:
+        //   console.log(`${appearenceName} не существует`);
+      }
     } else {
       
       // Если нет одежды персонажа - создаем
@@ -85,7 +99,6 @@ cells.forEach((cell) => {
       switch (appearenceName) {
         case "eyes":
           document.getElementById('eyes_master').src = `images/outfit/${currentAppearenceUrl}`;
-          break;
         case "hairs":
           document.getElementById('hairs_master').src = `images/outfit/${currentAppearenceUrl}`;
           break;
