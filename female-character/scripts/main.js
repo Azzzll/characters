@@ -1,13 +1,9 @@
 // Получаем все элементы с классом 'grid-item'
 const gridItems = document.querySelectorAll('.grid-item');
-
-
-
 const sidebarPickAppearence = document.querySelector(".clothes-changing",);
 const cellsWrapper = sidebarPickAppearence.querySelector(".gridcontainerclothes");
 const appearences = sidebarPickAppearence.querySelectorAll(".icon_container");
 const cells = cellsWrapper.querySelectorAll(".grid-item");
-
 
 appearences.forEach((appearence) => {
   // При клике на иконку: (парик/одежда/тд)
@@ -29,9 +25,6 @@ appearences.forEach((appearence) => {
   });
 });
 
-
-
-
 // Подгрузка внешности в ячейки от активной иконки
 const uploadCells = (activeAppearence) => {
     for (let i = 1; i <= cells.length; i++) {
@@ -50,7 +43,83 @@ const uploadCells = (activeAppearence) => {
     }
   };
 
+// По умолчанию первая иконка - активна
+appearences[0].classList.add("active");
+uploadCells(appearences[0].classList[1]);
 
+cells.forEach((cell) => {
+  cell.addEventListener("click", () => {
+    // .container .character > img.wig + img.face + img.shirt + img.pants
+    // .pick-character .character.mini > img.wig + img.face + img.shirt + img.pants
+    const appearenceImage = cell.querySelector(".grid-item-png"); // <img class="icon" src="images/appearence/face/1.png">
+    const appearenceSrc = appearenceImage.getAttribute("src"); // images/appearence/face/1.png
+    const currentAppearenceUrl = appearenceSrc.substring(
+    22,
+      appearenceSrc.length,
+    ); // face/1.png
+    const appearenceName = currentAppearenceUrl.split("/")[0]; // face
+
+    // Путь одежды для персонажа, исходя из пути ячейки
+    const outfitUrl = `images/outfit/${currentAppearenceUrl}`;
+
+    const character = document.querySelector(".container .character");
+    const face = character.querySelector(".eyes");
+    const eyebrows = character.querySelector(".eyebrows");
+    const hairs = character.querySelector(".hairs");
+    const top = character.querySelector(".top");
+    const pants = character.querySelector(".pants");
+    const boots = character.querySelector(".boots");
+
+
+    const characterImage = character.querySelector(`.${appearenceName}`);
+    if (characterImage) {
+      // Применить найденную одежду на персонажа
+      switch (appearenceName) {
+        case "face":
+          face.src = outfitUrl;
+          break;
+        case "wig":
+          wig.src = outfitUrl;
+          break;
+        case "shirt":
+          shirt.src = outfitUrl;
+          break;
+        case "pants":
+          pants.src = outfitUrl;
+          break;
+        // default:
+        //   console.log(`${appearenceName} не существует`);
+      }
+    } else {
+      // Если нет одежды персонажа - создаем
+      const outfit = document.createElement("img");
+      outfit.className = appearenceName + '_master girl-img';
+      outfit.src = `images/outfit/${currentAppearenceUrl}`;
+      switch (appearenceName) {
+        case "eyes":
+          document.getElementById('eyes_master').src = `images/outfit/${currentAppearenceUrl}`;
+        case "hairs":
+          document.getElementById('hairs_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "pants":
+          document.getElementById('pants_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "top":
+          document.getElementById('top_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "throat":
+          document.getElementById('throat_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "eyebrows":
+          document.getElementById('eyebrows_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "boots":
+          document.getElementById('boots_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+      }
+    }
+  });
+});
 
 
 
