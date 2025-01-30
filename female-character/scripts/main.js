@@ -97,6 +97,7 @@ cells.forEach((cell) => {
       outfit.className = appearenceName + '_master girl-img';
       outfit.src = `images/outfit/${currentAppearenceUrl}`;
       switch (appearenceName) {
+        
         case "eyes":
           document.getElementById('eyes_master').src = `images/outfit/${currentAppearenceUrl}`;
           break;
