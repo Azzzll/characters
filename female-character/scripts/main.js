@@ -45,7 +45,7 @@ const imagesHairs2 = [
     'images/outfit/hairs/42волосы.png',
     'images/outfit/hairs/43волосы.png',
 ];
-const sidebarPickAppearence = document.querySelector(".character",);
+const sidebarPickAppearence = document.querySelector(".right-select",);
 const appearences = sidebarPickAppearence.querySelectorAll(".icon_container");
 appearences.forEach((gridcontainerclothes) => {
   // При клике на иконку: (парик/одежда/тд)
@@ -72,7 +72,7 @@ const uploadCells = (activeAppearence) => {
     for (let i = 1; i <= cells.length; i++) {
       const image = document.createElement("img");
       image.className = "icon";
-      image.src = `images/outfit/${activeAppearence}/${i}.png`;
+      image.src = `images/sidebar-outfit/${activeAppearence}/${i}.png`;
 
       // Костыль без бекенда
       // Изображения грузятся 1-12.png, даже если их нет
