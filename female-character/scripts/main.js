@@ -77,6 +77,7 @@ cells.forEach((cell) => {
       
       
     } else {
+      
       // Если нет одежды персонажа - создаем
       const outfit = document.createElement("img");
       outfit.className = appearenceName + '_master girl-img';
