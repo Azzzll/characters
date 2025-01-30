@@ -2,37 +2,7 @@
 const gridItems = document.querySelectorAll('.grid-item');
 
 
-// иконки в сайдбаре по умолчанию
-const imagesEyes1 = [
-    'images/sidebar-outfit/eyes/11глаза.png',
-    'images/sidebar-outfit/eyes/12глаза.png',
-    'images/sidebar-outfit/eyes/13глаза.png',
-    'images/sidebar-outfit/eyes/14глаза.png',
-    'images/sidebar-outfit/eyes/21глаза.png',
-    'images/sidebar-outfit/eyes/22глаза.png',
-];
-const imagesEyebrows1 = [
-    '../images/outfit/eyebrows/16брови.png',
-    'images/outfit/eyebrows/26брови.png',
-    'images/outfit/eyebrows/36брови.png',
-    'images/outfit/eyebrows/46брови.png',
-];
-const imagesHairs1 = [
-    'images/outfit/hairs/11волосы.png',
-    'images/outfit/hairs/12волосы.png',
-    'images/outfit/hairs/13волосы.png',
-    'images/outfit/hairs/21волосы.png',
-    'images/outfit/hairs/22волосы.png',
-    'images/outfit/hairs/23волосы.png',
-];
-const imagesHairs2 = [
-    'images/outfit/hairs/31волосы.png',
-    'images/outfit/hairs/32волосы.png',
-    'images/outfit/hairs/33волосы.png',
-    'images/outfit/hairs/41волосы.png',
-    'images/outfit/hairs/42волосы.png',
-    'images/outfit/hairs/43волосы.png',
-];
+
 const sidebarPickAppearence = document.querySelector(".clothes-changing",);
 const cellsWrapper = sidebarPickAppearence.querySelector(".gridcontainerclothes");
 const appearences = sidebarPickAppearence.querySelectorAll(".icon_container");
