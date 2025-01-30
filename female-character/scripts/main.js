@@ -68,7 +68,6 @@ const uploadCells = (activeAppearence) => {
       const image = document.createElement("img");
       image.className = "grid-item-png";
       image.src = `images/sidebar-outfit/${activeAppearence}/${i}.png`;
-
       // Костыль без бекенда
       // Изображения грузятся 1-12.png, даже если их нет
       // TODO: изменить
