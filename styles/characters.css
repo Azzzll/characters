@@ -4,6 +4,7 @@
   position: relative;
   max-width: 100%;
   display: flex;
+  align-items: flex-end;
 
   .character {
     /* position: absolute; */
@@ -71,36 +72,36 @@
 
   .character.cat {
     z-index: 2;
-    left: 49%;
+    height: calc(655px / 2);
 
     #eys {
       width: 46px;
-      left: -43px;
-      top: 407px;
+      max-width: 46px;
       height: 22px;
+      top: 23%;
+      left: 14%;
     }
     #ears {
       width: 82px;
+      max-width: 82px;
       height: 127px;
-      left: -58px;
-      top: 341px;
+      left: 6%;
+      top: 2%;
     }
     #scarf {
       width: 91px;
+      max-width: 91px;
       height: 159px;
-      top: 415px;
-      left: -67px;
+      left: 2%;
     }
     #tail {
       width: 213px;
+      max-width: 213px;
       height: 463px;
-      left: -82px;
-      top: 265px;
     }
     #body {
       width: 193px;
-      top: 168px;
-      left: -72px;
+      max-width: 193px;
     }
   }
 
