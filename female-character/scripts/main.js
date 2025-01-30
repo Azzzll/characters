@@ -42,7 +42,8 @@ const uploadCells = (activeAppearence) => {
       cells[i - 1].appendChild(image);
     }
   };
-// По умолчанию первая иконка - активна
+// По умо
+// лчанию первая иконка - активна
 appearences[0].classList.add("active");
 uploadCells(appearences[0].classList[1]);
 
