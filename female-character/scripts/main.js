@@ -1,58 +1,16 @@
 // Получаем все элементы с классом 'grid-item'
 const gridItems = document.querySelectorAll('.grid-item');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// иконки в сайдбаре по умолчанию
-const imagesEyes1 = [
-    'images/sidebar-outfit/eyes/11глаза.png',
-    'images/sidebar-outfit/eyes/12глаза.png',
-    'images/sidebar-outfit/eyes/13глаза.png',
-    'images/sidebar-outfit/eyes/14глаза.png',
-    'images/sidebar-outfit/eyes/21глаза.png',
-    'images/sidebar-outfit/eyes/22глаза.png',
-];
-const imagesEyebrows1 = [
-    '../images/outfit/eyebrows/16брови.png',
-    'images/outfit/eyebrows/26брови.png',
-    'images/outfit/eyebrows/36брови.png',
-    'images/outfit/eyebrows/46брови.png',
-];
-const imagesHairs1 = [
-    'images/outfit/hairs/11волосы.png',
-    'images/outfit/hairs/12волосы.png',
-    'images/outfit/hairs/13волосы.png',
-    'images/outfit/hairs/21волосы.png',
-    'images/outfit/hairs/22волосы.png',
-    'images/outfit/hairs/23волосы.png',
-];
-const imagesHairs2 = [
-    'images/outfit/hairs/31волосы.png',
-    'images/outfit/hairs/32волосы.png',
-    'images/outfit/hairs/33волосы.png',
-    'images/outfit/hairs/41волосы.png',
-    'images/outfit/hairs/42волосы.png',
-    'images/outfit/hairs/43волосы.png',
-];
-const sidebarPickAppearence = document.querySelector(".character",);
+const sidebarPickAppearence = document.querySelector(".clothes-changing",);
+const cellsWrapper = sidebarPickAppearence.querySelector(".gridcontainerclothes");
 const appearences = sidebarPickAppearence.querySelectorAll(".icon_container");
-appearences.forEach((gridcontainerclothes) => {
+const cells = cellsWrapper.querySelectorAll(".grid-item");
+
+appearences.forEach((appearence) => {
   // При клике на иконку: (парик/одежда/тд)
-  gridcontainerclothes.addEventListener("click", () => {
+  appearence.addEventListener("click", () => {
     // Удалить у всех .icon_container класс .active
-    appearences.forEach((gridcontainerclothes) =>
-        gridcontainerclothes.classList.remove("active"),
+    appearences.forEach((appearence) =>
+      appearence.classList.remove("active"),
     );
     // Удалить у всех ячеек существовавшие изображения
     cells.forEach((cell) => {
@@ -60,9 +18,9 @@ appearences.forEach((gridcontainerclothes) => {
     });
 
     // Присвоить текущему .icon_container класс active
-    gridcontainerclothes.classList.add("active");
+    appearence.classList.add("active");
     // Узнать что это за внешность (face/wig/pants/etc)
-    const activeAppearence = gridcontainerclothes.classList[1];
+    const activeAppearence = appearence.classList[1];
     uploadCells(activeAppearence);
   });
 });
@@ -71,9 +29,8 @@ appearences.forEach((gridcontainerclothes) => {
 const uploadCells = (activeAppearence) => {
     for (let i = 1; i <= cells.length; i++) {
       const image = document.createElement("img");
-      image.className = "icon";
-      image.src = `images/outfit/${activeAppearence}/${i}.png`;
-
+      image.className = "grid-item-png";
+      image.src = `images/sidebar-outfit/${activeAppearence}/${i}.png`;
       // Костыль без бекенда
       // Изображения грузятся 1-12.png, даже если их нет
       // TODO: изменить
@@ -85,8 +42,86 @@ const uploadCells = (activeAppearence) => {
       cells[i - 1].appendChild(image);
     }
   };
+// По умо
+// лчанию первая иконка - активна
+appearences[0].classList.add("active");
+uploadCells(appearences[0].classList[1]);
+
+cells.forEach((cell) => {
+  cell.addEventListener("click", () => {
+    // .container .character > img.wig + img.face + img.shirt + img.pants
+    // .pick-character .character.mini > img.wig + img.face + img.shirt + img.pants
+    const appearenceImage = cell.querySelector(".grid-item-png"); // <img class="icon" src="images/appearence/face/1.png">
+    const appearenceSrc = appearenceImage.getAttribute("src"); // images/appearence/face/1.png
+    const currentAppearenceUrl = appearenceSrc.substring(
+    22,
+      appearenceSrc.length,
+    ); // face/1.png
+    const appearenceName = currentAppearenceUrl.split("/")[0]; // face
+
+    // Путь одежды для персонажа, исходя из пути ячейки
+    const outfitUrl = `images/outfit/${currentAppearenceUrl}`;
+
+    const character = document.querySelector(".container .character");
+    const face = character.querySelector(".eyes");
+    const eyebrows = character.querySelector(".eyebrows");
+    const hairs = character.querySelector(".hairs");
+    const top = character.querySelector(".top");
+    const pants = character.querySelector(".pants");
+    const boots = character.querySelector(".boots");
 
 
+    const characterImage = character.querySelector(`.${appearenceName}`);
+    if (characterImage) {
+      // Применить найденную одежду на персонажа
+      switch (appearenceName) {
+        case "face":
+          face.src = outfitUrl;
+          break;
+        case "wig":
+          wig.src = outfitUrl;
+          break;
+        case "shirt":
+          shirt.src = outfitUrl;
+          break;
+        case "pants":
+          pants.src = outfitUrl;
+          break;
+        // default:
+        //   console.log(`${appearenceName} не существует`);
+      }
+    } else {
+      
+      // Если нет одежды персонажа - создаем
+      const outfit = document.createElement("img");
+      outfit.className = appearenceName + '_master girl-img';
+      outfit.src = `images/outfit/${currentAppearenceUrl}`;
+      switch (appearenceName) {
+        case "eyes":
+          document.getElementById('eyes_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "hairs":
+          document.getElementById('hairs_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "pants":
+          document.getElementById('pants_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "top":
+          document.getElementById('top_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "throat":
+          document.getElementById('throat_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "eyebrows":
+          document.getElementById('eyebrows_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+        case "boots":
+          document.getElementById('boots_master').src = `images/outfit/${currentAppearenceUrl}`;
+          break;
+      }
+    }
+  });
+});
 
 
 

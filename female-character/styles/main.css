@@ -85,8 +85,6 @@ a {
     filter: blur(136.5px);
     background: rgba(205, 136, 57, 0.57);
 }
-
-
 .girl-img{
     background-repeat: no-repeat;
     width: 372px;
@@ -188,8 +186,9 @@ a {
     margin-top: 59px;
     height: 474px;
     width: 311px;
-    
+    background-size: cover;
 }
+
 .grid-item{
     position: relative;
     height: 142px;
@@ -200,6 +199,16 @@ a {
     justify-items: center;
     background-size: cover;
 }
+.grid-item-png{
+    position: relative;
+    height: 142px;
+    width: 139px;
+    border-radius: 33px;
+    align-items: center;
+    justify-items: center;
+    background-size: cover;
+}
+
 .bottom-switch{
     display: flex; /* Используем Flexbox */
     justify-content: center; /* Центрируем по горизонтали */
