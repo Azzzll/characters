@@ -36,7 +36,6 @@ if (savedCharacter) {
 }
 
 const catCharacter = characters.querySelector(".character.cat");
-
 const savedCat = JSON.parse(localStorage.getItem("LastSavedCatCharacter"));
 
 if (savedCat) {
