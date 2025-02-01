@@ -1,10 +1,10 @@
 const sidebarPickCharacter = document.querySelector(".sidebar.pick-character");
-const sidebarPickAppearence = document.querySelector(
-  ".sidebar.pick-appearence",
+const sidebarPickAppearance = document.querySelector(
+  ".sidebar.pick-appearance",
 );
 
-if (sidebarPickAppearence) {
-  const backToCharacterSelection = sidebarPickAppearence.querySelector(".back");
+if (sidebarPickAppearance) {
+  const backToCharacterSelection = sidebarPickAppearance.querySelector(".back");
   const aboutCharacter = document.querySelector(".about-character");
   const character = document.querySelector(".container .character");
 
@@ -13,20 +13,20 @@ if (sidebarPickAppearence) {
     cell.classList.toggle("active");
     sidebarPickCharacter.classList.remove("deactive");
     aboutCharacter.classList.remove("deactive");
-    sidebarPickAppearence.classList.remove("active");
-    character.classList.remove("appearence");
+    sidebarPickAppearance.classList.remove("active");
+    character.classList.remove("appearance");
   });
 
-  const cellsWrapper = sidebarPickAppearence.querySelector(".appearence");
+  const cellsWrapper = sidebarPickAppearance.querySelector(".appearance");
   const cells = cellsWrapper.querySelectorAll(".cell");
 
-  const appearences = sidebarPickAppearence.querySelectorAll(".icon_container");
-  appearences.forEach((appearence) => {
+  const appearances = sidebarPickAppearance.querySelectorAll(".icon_container");
+  appearances.forEach((appearance) => {
     // При клике на иконку: (парик/одежда/тд)
-    appearence.addEventListener("click", () => {
+    appearance.addEventListener("click", () => {
       // Удалить у всех .icon_container класс .active
-      appearences.forEach((appearence) =>
-        appearence.classList.remove("active"),
+      appearances.forEach((appearance) =>
+        appearance.classList.remove("active"),
       );
       // Удалить у всех ячеек существовавшие изображения
       cells.forEach((cell) => {
@@ -34,19 +34,19 @@ if (sidebarPickAppearence) {
       });
 
       // Присвоить текущему .icon_container класс active
-      appearence.classList.add("active");
+      appearance.classList.add("active");
       // Узнать что это за внешность (face/wig/pants/etc)
-      const activeAppearence = appearence.classList[1];
-      uploadCells(activeAppearence);
+      const activeAppearance = appearance.classList[1];
+      uploadCells(activeAppearance);
     });
   });
 
   // Подгрузка внешности в ячейки от активной иконки
-  const uploadCells = (activeAppearence) => {
+  const uploadCells = (activeAppearance) => {
     for (let i = 1; i <= cells.length; i++) {
       const image = document.createElement("img");
       image.className = "icon";
-      image.src = `images/appearence/${activeAppearence}/${i}.png`;
+      image.src = `images/appearance/${activeAppearance}/${i}.png`;
 
       // Костыль без бекенда
       // Изображения грузятся 1-12.png, даже если их нет
@@ -61,23 +61,23 @@ if (sidebarPickAppearence) {
   };
 
   // По умолчанию первая иконка - активна
-  appearences[0].classList.add("active");
-  uploadCells(appearences[0].classList[1]);
+  appearances[0].classList.add("active");
+  uploadCells(appearances[0].classList[1]);
 
   cells.forEach((cell) => {
     cell.addEventListener("click", () => {
       // .container .character > img.wig + img.face + img.shirt + img.pants
       // .pick-character .character.mini > img.wig + img.face + img.shirt + img.pants
-      const appearenceImage = cell.querySelector(".icon"); // <img class="icon" src="images/appearence/face/1.png">
-      const appearenceSrc = appearenceImage.getAttribute("src"); // images/appearence/face/1.png
-      const currentAppearenceUrl = appearenceSrc.substring(
+      const appearanceImage = cell.querySelector(".icon"); // <img class="icon" src="images/appearance/face/1.png">
+      const appearanceSrc = appearanceImage.getAttribute("src"); // images/appearance/face/1.png
+      const currentAppearanceUrl = appearanceSrc.substring(
         18,
-        appearenceSrc.length,
+        appearanceSrc.length,
       ); // face/1.png
-      const appearenceName = currentAppearenceUrl.split("/")[0]; // face
+      const appearanceName = currentAppearanceUrl.split("/")[0]; // face
 
       // Путь одежды для персонажа, исходя из пути ячейки
-      const outfitUrl = `images/outfit/${currentAppearenceUrl}`;
+      const outfitUrl = `images/outfit/${currentAppearanceUrl}`;
 
       const character = document.querySelector(".container .character");
       const face = character.querySelector(".face");
@@ -85,10 +85,10 @@ if (sidebarPickAppearence) {
       const shirt = character.querySelector(".shirt");
       const pants = character.querySelector(".pants");
 
-      const characterImage = character.querySelector(`.${appearenceName}`);
+      const characterImage = character.querySelector(`.${appearanceName}`);
       if (characterImage) {
         // Применить найденную одежду на персонажа
-        switch (appearenceName) {
+        switch (appearanceName) {
           case "face":
             face.src = outfitUrl;
             break;
@@ -102,14 +102,14 @@ if (sidebarPickAppearence) {
             pants.src = outfitUrl;
             break;
           // default:
-          //   console.log(`${appearenceName} не существует`);
+          //   console.log(`${appearanceName} не существует`);
         }
       } else {
         // Если нет одежды персонажа - создаем
         const outfit = document.createElement("img");
-        outfit.className = appearenceName;
-        outfit.src = `images/outfit/${currentAppearenceUrl}`;
-        switch (appearenceName) {
+        outfit.className = appearanceName;
+        outfit.src = `images/outfit/${currentAppearanceUrl}`;
+        switch (appearanceName) {
           case "face":
             outfit.classList.add = "face";
             break;
@@ -128,15 +128,15 @@ if (sidebarPickAppearence) {
     });
   });
 
-  const save = sidebarPickAppearence.querySelector(".save");
+  const save = sidebarPickAppearance.querySelector(".save");
   save.addEventListener("click", () => {
     const cell = sidebarPickCharacter.querySelector(".cell.active"); // understand current cell by added second class - .active
     const session = cell.getAttribute("data-id"); // current session
 
     sidebarPickCharacter.classList.remove("deactive");
     aboutCharacter.classList.remove("deactive");
-    sidebarPickAppearence.classList.remove("active");
-    character.classList.remove("appearence");
+    sidebarPickAppearance.classList.remove("active");
+    character.classList.remove("appearance");
     cell.classList.toggle("active");
 
     localStorage.setItem(session, character.innerHTML);
