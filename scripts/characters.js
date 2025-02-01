@@ -34,3 +34,25 @@ if (savedCharacter) {
     />
   `;
 }
+
+const catCharacter = characters.querySelector(".character.cat");
+const savedCat = JSON.parse(localStorage.getItem("LastSavedCatCharacter"));
+
+if (savedCat) {
+  catCharacter.innerHTML = `
+  <img id="body" src=" ${savedCat.body ||'./cat/image/body_brown.svg'}" alt="Body">
+  <img id="eys" src="${savedCat.eys ||'./cat/image/eys_1green.svg'}" alt="Eyes">
+  <img id="ears" src="${savedCat.ears ||'./cat/image/ears_1.svg'}" alt="Ears">
+  <img id="scarf" src="${savedCat.scarf ||'./cat/image/scarf_2yellow.svg'}" alt="Scarf">
+  <img id="tail" src="${savedCat.tail ||'./cat/image/tail_1brown.svg'}" alt="Tail">;
+  `
+} else {
+  catCharacter.innerHTML = `
+  <img id="body" src="./cat/image/body_brown.svg" alt="Body">
+  <img id="eys" src="./cat/image/eys_1green.svg" alt="Eyes">
+  <img id="ears" src="./cat/image/ears_1.svg" alt="Ears">
+  <img id="scarf" src="./cat/image/scarf_2yellow.svg" alt="Scarf">
+  <img id="tail" src="./cat/image/tail_1brown.svg" alt="Tail"> `;
+   
+}
+
