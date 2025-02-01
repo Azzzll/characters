@@ -95,3 +95,17 @@ document.querySelector('.right-arrow').addEventListener('click', () => {
     console.log('Right arrow clicked');
     changeCharacter('right');
 });
+
+const btn = document.querySelector(".btn");
+const cat = document.querySelector(".cat");
+const save = btn.querySelector(".save");
+
+save.addEventListener("click", () => {
+const images = cat.querySelectorAll("img");
+
+const catData = {};
+ images.forEach((img) => {
+    catData[img.id] = img.src;
+ });
+  localStorage.setItem("LastSavedCatCharacter", JSON.stringify(catData));
+});

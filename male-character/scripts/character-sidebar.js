@@ -1,6 +1,6 @@
 const sidebarPickCharacter = document.querySelector(".sidebar.pick-character");
-const sidebarPickAppearence = document.querySelector(
-  ".sidebar.pick-appearence",
+const sidebarPickAppearance = document.querySelector(
+  ".sidebar.pick-appearance",
 );
 
 if (sidebarPickCharacter) {
@@ -33,9 +33,9 @@ if (sidebarPickCharacter) {
     cell.addEventListener("click", () => {
       sidebarPickCharacter.classList.add("deactive");
       aboutCharacter.classList.add("deactive");
-      sidebarPickAppearence.classList.add("active");
+      sidebarPickAppearance.classList.add("active");
       cell.classList.toggle("active");
-      character.classList.add("appearence");
+      character.classList.add("appearance");
 
       const miniCharacter = cell.querySelector(".character.mini");
 
