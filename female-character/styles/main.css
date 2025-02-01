@@ -40,23 +40,41 @@ a {
 }
 .logo{
     display: flex;
-    margin-left: auto;
+    justify-content: end;
     margin-top: 29px;
     margin-right: 34px;
     background-image: url(../images/logo-dark.svg);
     background-repeat: no-repeat;
     position: relative;
-    width: 59px;
+    min-width: 59px;
     height: 69px;
 }
 .menu-icon{
     margin-left: 35px;
     margin-bottom: 12px;
     background-image: url(../images/menu.svg);
-    width: 48px;
+    min-width: 48px;
     height: 48px;
 }
 
+.header__navigation {
+    width: 1000px;
+    margin-inline: 16px;
+    justify-content: center;
+    align-self: center;
+    
+  }
+
+.navigation__list {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    gap: 40px;
+    width: 100%;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+}
 /*main*/
 .main{
     background: rgb(242, 223, 166);
@@ -198,6 +216,7 @@ a {
     align-items: center;
     justify-items: center;
     background-size: cover;
+    cursor: pointer;  
 }
 .grid-item-png{
     position: relative;
