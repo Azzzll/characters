@@ -129,25 +129,28 @@
       height: calc(287px / 2);
 
       #eys {
-        width: calc(46px / 2.4);
-        height: calc(22px / 2.4);
-        top: 22%;
+        width: calc(51px / 2.4);
+        height: calc(20px / 2.4);
+        top: 32px;
         left: 0%;
       }
       #ears {
-        width: calc(82px / 2);
+        width: calc(77px / 2);
         height: calc(127px / 2);
-        top: -1%;
-        left: -13%;
+        top: -2%;
+        left: -11%;
       }
       #scarf {
-        width: calc(91px / 2);
+        width: calc(87px / 2);
         height: calc(159px / 2);
-        left: -19%;
+        left: -18%;
+        top: 20%;
       }
       #tail {
         width: calc(213px / 2);
         height: calc(453px / 2);
+        left: -36%;
+        top: -30%;
       }
       #body {
         width: 193px;
