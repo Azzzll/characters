@@ -94,9 +94,9 @@ cells.forEach((cell) => {
       
       // Если нет одежды персонажа - создаем
       const outfit = document.createElement("img");
-      outfit.className = appearenceName + '_master girl-img';
-      outfit.src = `images/outfit/${currentAppearenceUrl}`;
-      switch (appearenceName) {
+      outfit.className = appearanceName + '_master girl-img';
+      outfit.src = `images/outfit/${currentAppearanceUrl}`;
+      switch (appearanceName) {
         case "eyes":
           document.getElementById('eyes_master').src = `images/outfit/${currentAppearanceUrl}`;
           break;
