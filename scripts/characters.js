@@ -46,7 +46,7 @@ if (savedCat) {
   <img id="scarf" src="${savedCat.scarf ||'./cat/image/scarf_2yellow.svg'}" alt="Scarf">
   <img id="tail" src="${savedCat.tail ||'./cat/image/tail_1brown.svg'}" alt="Tail">;
   `
-  
+
 } else {
   catCharacter.innerHTML = `
   <img id="body" src="./cat/image/body_brown.svg" alt="Body">
@@ -57,9 +57,10 @@ if (savedCat) {
    
 }
 
+
 const femaleCharacter = characters.querySelector(".character.woman");
 const savedFemale = JSON.parse(localStorage.getItem("LastSavedFemaleCharacter"));
-console.log(localStorage.getItem("LastSavedFemaleCharacter"));
+
 if (savedFemale) {
   femaleCharacter.innerHTML = `
   <img id="body" src=" ${savedFemale.body ||'./female-character/images/outfit/тело.png'}" alt="Body">
@@ -71,6 +72,7 @@ if (savedFemale) {
   <img id="eyebrows_master" src="${savedFemale.eyebrows_master ||'./female-character/images/outfit/eyebrows/2.png'}" alt="Tail">;
   <img id="boots_master" src="${savedFemale.boots_master ||'./female-character/images/outfit/boots/1.png'}" alt="Tail">;
   `
+
 } else {
   femaleCharacter.innerHTML = `
   <img class="girl-img" src="female-character/images/outfit/тело.png"></img>

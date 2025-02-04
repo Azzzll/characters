@@ -123,13 +123,13 @@ cells.forEach((cell) => {
   });
 });
 
-
-
 const female = document.querySelector(".character");
 const save = document.querySelector(".save");
+
 save.addEventListener("click", () => {
 const images = female.querySelectorAll("img");
 const femaleData = {};
+
  images.forEach((img) => {
   femaleData[img.id] = img.src;
  });
