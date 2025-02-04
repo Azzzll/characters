@@ -122,7 +122,6 @@ cells.forEach((cell) => {
     }
   });
 });
-
 const female = document.querySelector(".character");
 const save = document.querySelector(".save");
 
