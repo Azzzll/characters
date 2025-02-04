@@ -46,6 +46,7 @@ if (savedCat) {
   <img id="scarf" src="${savedCat.scarf ||'./cat/image/scarf_2yellow.svg'}" alt="Scarf">
   <img id="tail" src="${savedCat.tail ||'./cat/image/tail_1brown.svg'}" alt="Tail">;
   `
+  
 } else {
   catCharacter.innerHTML = `
   <img id="body" src="./cat/image/body_brown.svg" alt="Body">
