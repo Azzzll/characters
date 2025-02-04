@@ -56,7 +56,6 @@ if (savedCat) {
    
 }
 
-
 const femaleCharacter = characters.querySelector(".character.woman");
 const savedFemale = JSON.parse(localStorage.getItem("LastSavedFemaleCharacter"));
 console.log(localStorage.getItem("LastSavedFemaleCharacter"));
