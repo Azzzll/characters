@@ -59,17 +59,17 @@ if (savedCat) {
 
 const femaleCharacter = characters.querySelector(".character.woman");
 const savedFemale = JSON.parse(localStorage.getItem("LastSavedFemaleCharacter"));
-
+console.log(localStorage.getItem("LastSavedFemaleCharacter"));
 if (savedFemale) {
   femaleCharacter.innerHTML = `
   <img id="body" src=" ${savedFemale.body ||'./female-character/images/outfit/тело.png'}" alt="Body">
-  <img id="hairs_master" src=" ${savedFemale.hairs ||'./female-character/images/outfit/hairs/7.png'}" alt="Body">
-  <img id="pants_master" src="${savedFemale.pants ||'./female-character/images/outfit/pants/4.png'}" alt="Eyes">
-  <img id="top_master" src="${savedFemale.top ||'./female-character/images/outfit/top/4.png'}" alt="Ears">
-  <img id="eyes_master" src="${savedFemale.eyes ||'./female-character/images/outfit/eyes/5.png'}" alt="Scarf">
-  <img id="throat_master" src="${savedFemale.throat ||'./female-character/images/outfit/throat/3.png'}" alt="Tail">;
-  <img id="eyebrows_master" src="${savedFemale.eyebrows ||'./female-character/images/outfit/eyebrows/2.png'}" alt="Tail">;
-  <img id="boots_master" src="${savedFemale.boots ||'./female-character/images/outfit/boots/1.png'}" alt="Tail">;
+  <img id="hairs_master" src=" ${savedFemale.hairs_master ||'./female-character/images/outfit/hairs/7.png'}" alt="Body">
+  <img id="pants_master" src="${savedFemale.pants_master ||'./female-character/images/outfit/pants/4.png'}" alt="Eyes">
+  <img id="top_master" src="${savedFemale.top_master ||'./female-character/images/outfit/top/4.png'}" alt="Ears">
+  <img id="eyes_master" src="${savedFemale.eyes_master ||'./female-character/images/outfit/eyes/5.png'}" alt="Scarf">
+  <img id="throat_master" src="${savedFemale.throat_master ||'./female-character/images/outfit/throat/3.png'}" alt="Tail">;
+  <img id="eyebrows_master" src="${savedFemale.eyebrows_master ||'./female-character/images/outfit/eyebrows/2.png'}" alt="Tail">;
+  <img id="boots_master" src="${savedFemale.boots_master ||'./female-character/images/outfit/boots/1.png'}" alt="Tail">;
   `
 } else {
   femaleCharacter.innerHTML = `
